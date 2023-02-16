@@ -8,3 +8,19 @@
 // @use 'vuetify' with (
 //   $color-pack: false
 // );
+
+$primary-color: #F5FE00;
+
+.navlink {
+    opacity: 1;
+}
+
+.navlink:hover {
+    color: $primary-color;
+} 
+
+.home {
+    background-size: cover;
+    background-position: center;
+}
+
