@@ -11,15 +11,27 @@
 
 $primary-color: #F5FE00;
 
-.navlink {
-    opacity: 1;
+.nav-colored {
+    // background-color: black !important;
+    transition: background-color .5s linear;
 }
 
-.navlink:hover {
-    color: $primary-color;
-} 
+.nav-transparent {
+    // background-color: transparent !important;
+    transition: background-color .5s linear;
+}
 
-.home {
+.navlink {
+    opacity: 1;
+    color: white;
+    text-decoration: none;
+}
+
+.navlink:hover, .active {
+    color: $primary-color;
+}
+
+.section {
     background-size: cover;
     background-position: center;
 }

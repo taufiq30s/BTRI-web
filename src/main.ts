@@ -12,9 +12,11 @@ import { createApp } from 'vue'
 
 // Plugins
 import { registerPlugins } from '@/plugins'
+import VueSmoothScroll from 'v-smooth-scroll'
 
 const app = createApp(App)
 
 registerPlugins(app)
 
+app.use(VueSmoothScroll, {offset: -120})
 app.mount('#app')

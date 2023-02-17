@@ -1509,6 +1509,11 @@ util-deprecate@^1.0.2:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
+v-smooth-scroll@^2.0.0-beta.2:
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/v-smooth-scroll/-/v-smooth-scroll-2.0.0-beta.2.tgz#0095edd895e6f83bb991f7144d9a412f6e1f5f1c"
+  integrity sha512-uGWjayzx3mY1QAlDFe+JVCyYPpUqec3NE3tBXq8leIkS23zPcuXmmF2R2MY1UT7uP5gEgEo/Y5blXq37fnXYJw==
+
 vite-plugin-vuetify@^1.0.0-alpha.12:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vite-plugin-vuetify/-/vite-plugin-vuetify-1.0.2.tgz#d1777c63aa1b3a308756461b3d0299fd101ee8f4"
