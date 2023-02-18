@@ -8,16 +8,16 @@
     </v-app-bar-title>
     <template v-slot:append>
       <div class="d-none d-md-block" id="nav-menu">
-        <a class="navlink mx-3 active" href="#home" v-smooth-scroll>
+        <a class="navlink mx-3 home active" href="#home" v-smooth-scroll>
           Home
         </a>
-        <a class="navlink mx-3" href="#about" v-smooth-scroll>
+        <a class="navlink about mx-3" href="#about" v-smooth-scroll>
           About
         </a>
-        <a class="navlink mx-3" href="#character" v-smooth-scroll>
+        <a class="navlink character mx-3" href="#character" v-smooth-scroll>
           Character
         </a>
-        <v-btn class="bg-pink-accent-1" rounded="pill" href="#join" v-smooth-scroll>
+        <v-btn class="bg-pink-accent-1 join mx-3" rounded="pill" href="#join" v-smooth-scroll>
           Join Us
         </v-btn>
       </div>
@@ -30,17 +30,38 @@ import { onMounted, ref } from 'vue';
 
 const navColorClass = ref('nav-transparent');
 const bgColor = ref('transparent');
-const sections = document.querySelectorAll('.section');
-const navMenu = document.querySelectorAll('navlink');
 const currentMenu = ref('home');
 
 onMounted(() => {
+  const sections = document.querySelectorAll('.section');
+  const navMenu = document.querySelectorAll('.navlink');
+
   window.onscroll = () => {
     changeColor();
+    changeActiveNavMenu(sections, navMenu)
   }
 });
 
-const changeColor = () => {
+function changeActiveNavMenu (sections: NodeListOf<Element>, navMenu: NodeListOf<Element>) {
+  // console.log(`before ${currentMenu.value}`);
+  sections.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (document.documentElement.scrollTop >= (sectionTop + scrollTop) - 280) {
+      currentMenu.value = section.getAttribute('id') ?? 'home';
+    }
+  });
+
+  // console.log(`after ${currentMenu.value}`);
+  navMenu.forEach((menu) => {
+    menu.classList.remove("active");
+    if (menu.classList.contains(currentMenu.value)) {
+      menu.classList.add('active');
+    }
+  });
+}
+
+function changeColor () {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     navColorClass.value = 'nav-colored';
     bgColor.value = 'black';
