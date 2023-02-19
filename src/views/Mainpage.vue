@@ -1,7 +1,7 @@
 <template>
   <Home class="h-screen m-0 p-0 section" id="home" :style="{ backgroundImage: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${homeBgPath})` }" />
   <About class="m-0 p-0 section bg-black" id="about" />
-  <Character class="m-0 p-0 section" id="character" :style="{ backgroundColor: `blue` }" />
+  <Character class="m-0 p-0 section" id="character" :style="{ background: `url(${characterBgPath}), #0a0a0a` }" />
   <Joinus class="m-0 p-0 section" id="join" :style="{ backgroundImage: `url(${joinUsBgPath})` }" />
   <Footer />
 </template>
@@ -14,6 +14,6 @@
   import Footer from '@/layouts/default/Footer.vue';
 
   import homeBgPath from '@/assets/bg-temp.png';
-  import aboutBgPath from '@/assets/bg-temp2.png';
+  import characterBgPath from '@/assets/bg-chara.png';
   import joinUsBgPath from '@/assets/bg-temp3.jpg';
 </script>
