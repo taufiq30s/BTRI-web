@@ -9,6 +9,14 @@
 //   $color-pack: false
 // );
 
+// Vuetify Config
+@use 'vuetify' with (
+    $utilities: false
+);
+
+// Import Tailwind
+@tailwind utilities;
+
 $primary-color: #F5FE00;
 
 .nav-colored {
@@ -21,8 +29,7 @@ $primary-color: #F5FE00;
     transition: background-color .5s linear;
 }
 
-.navlink {
-    opacity: 1;
+.navlink, .stream-link > a {
     color: white;
     text-decoration: none;
 }
