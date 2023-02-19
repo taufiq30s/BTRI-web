@@ -1,13 +1,13 @@
 <template>
-  <v-app-bar class="px-5 px-md-15" height="120" :class="navColorClass" floating flat :color="bgColor">
+  <v-app-bar class="px-5 md:px-10 lg:px-20 v-toolbar--absolute" height="120" :class="navColorClass" flat :color="bgColor">
     <template v-slot:prepend>
-      <v-app-bar-nav-icon class="d-md-none white" />
+      <v-app-bar-nav-icon class="md:hidden white" />
     </template>
-    <v-app-bar-title>
-      <v-img src="@/assets/logo.webp" class="mx-2" max-width="90" contain />
+    <v-app-bar-title style="margin-inline-start: auto;">
+      <v-img src="@/assets/logo.webp" class="justify-center max-sm:max-h-24 md:max-w-[5rem] lg:mx-2" contain />
     </v-app-bar-title>
     <template v-slot:append>
-      <div class="d-none d-md-block" id="nav-menu">
+      <div class="hidden md:block" id="nav-menu">
         <a class="navlink mx-3 home active" href="#home" v-smooth-scroll>
           Home
         </a>
@@ -43,7 +43,6 @@ onMounted(() => {
 });
 
 function changeActiveNavMenu (sections: NodeListOf<Element>, navMenu: NodeListOf<Element>) {
-  // console.log(`before ${currentMenu.value}`);
   sections.forEach((section) => {
     const sectionTop = section.getBoundingClientRect().top;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -52,7 +51,6 @@ function changeActiveNavMenu (sections: NodeListOf<Element>, navMenu: NodeListOf
     }
   });
 
-  // console.log(`after ${currentMenu.value}`);
   navMenu.forEach((menu) => {
     menu.classList.remove("active");
     if (menu.classList.contains(currentMenu.value)) {
